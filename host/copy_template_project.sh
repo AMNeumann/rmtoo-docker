@@ -6,6 +6,13 @@ then
    exit 1
 fi
 
-docker create -ti --name src rmtoo:latest sh
-docker cp src:/usr/local/rmtoo/contrib/template_project $1
-docker rm -f src
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+docker create -ti --name sourcecontainer rmtoo:latest sh
+docker cp sourcecontainer:"/usr/local/rmtoo/contrib/template_project" $1
+docker rm -f sourcecontainer
+
+patchfile=${DIR}/Makefile.patch
+
+cd $1
+patch < ${patchfile}
