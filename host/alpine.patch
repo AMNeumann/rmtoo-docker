@@ -9,13 +9,14 @@
  
  CALL_RMTOO=${RMTOO_CALL} -j file://${RMTOO_CONFIG}
  
---- make.sh 2021-03-12 05:08:20.327933278 +0100
-+++ make.sh	2021-03-12 05:11:23.154130460 +0100
-@@ -1,3 +1,5 @@
+--- foo/make.sh	2021-03-12 04:05:47.000000000 +0100
++++ make.sh	2021-03-12 14:35:58.906285780 +0100
+@@ -1,3 +1,6 @@
  #!/bin/bash
 -source /etc/profile.d/R50*
 -make >make.log 2>&1
 +
 +DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
++cd ${DIR}
 +
 +make > ${DIR}/make.log 2>&1
