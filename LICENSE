@@ -1,3 +1,7 @@
+Note that this license only concerns the scripts and configuration files
+contained in this project. It explicitly excludes the tools contained within
+the container. These all have their own licenses.
+
 /*
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
@@ -7,3 +11,4 @@
  * Arne M. Neumann
  * ----------------------------------------------------------------------------
  */
+
