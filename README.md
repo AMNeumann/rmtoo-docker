@@ -14,7 +14,9 @@ Use `install.sh` to install the auxiliary scripts. By default, they end up in
 The docker container contains all the necessary files to use it, too. Just
 install them like so:
 
+```bash
 docker run --rm --mount type=bind,src=${HOME}/.local/bin,dst=/tgt -e "PREFIX=/tgt" rmtoo:latest "/bootstrap/files/install.sh"
+```
 
 
 ## Usage
