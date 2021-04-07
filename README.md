@@ -9,6 +9,14 @@ Use `install.sh` to install the auxiliary scripts. By default, they end up in
 `~/.local/bin`. You can change this by setting the environment variable
 `PREFIX`.
 
+### From Docker container
+
+The docker container contains all the necessary files to use it, too. Just
+install them like so:
+
+docker run --rm --mount type=bind,src=${HOME}/.local/bin,dst=/tgt -e "PREFIX=/tgt" rmtoo:latest "/bootstrap/files/install.sh"
+
+
 ## Usage
 
 In addition to the Dockerfile, there are a couple of auxiliary scripts.
